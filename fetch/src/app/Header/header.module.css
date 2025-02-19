@@ -1,0 +1,32 @@
+.header {
+    background-color: rgb(192, 228, 192);
+    padding: 2em;
+    text-align: center;      
+    position: relative;      
+  }
+  
+  .title {
+    font-family: Geneva, Tahoma, sans-serif;
+    color: slateblue;
+    margin: 0;
+  }
+  
+  .subtitle {
+    color: darkgreen;
+    margin: 0;
+  }
+  
+
+  .imageContainer {
+    position: absolute;
+    right: 20px;             
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .image {
+    border-radius: 8px;
+    width: 100px;
+    height: auto;
+  }
+  
