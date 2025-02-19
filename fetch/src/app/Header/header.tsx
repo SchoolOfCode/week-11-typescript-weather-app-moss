@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
 
-function Header(): JSX.Element {
+
+function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.textContainer}> 
