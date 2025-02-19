@@ -1,24 +1,17 @@
-"use client"
 
-import React, { useState } from 'react';
-import Header from "./Header/header"
-import Footer from "./Footer/footer";
-import SearchBar from "./Hero/Hero";
-import WeatherCard from "./WeatherDisplay/weather_display";
-import { WeatherData } from '@/types';
+
+import Header from "./components/Header/header"
+import Footer from "./components/Footer/footer";
+import Hero from "./components/Hero/Hero";
+
 
 const WeatherPage: React.FC = () => {
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-
-  const handleWeatherData = (data: WeatherData) => {
-      setWeatherData(data);
-  };
+ 
 
   return (
       <div >
           <Header />
-          <SearchBar onSearch={handleWeatherData} />
-          {weatherData && <WeatherCard data={weatherData} />}
+          <Hero />
           <Footer />
       </div>
   );
