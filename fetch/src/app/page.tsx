@@ -1,28 +1,27 @@
 "use client"
 
-import Image from "next/image";
-import styles from "./page.module.css";
+import React, { useState } from 'react';
 import Header from "./Header/header"
 import Footer from "./Footer/footer";
 import SearchBar from "./Hero/Hero";
 import WeatherCard from "./WeatherDisplay/weather_display";
+import { WeatherData } from '@/types';
 
-export default function Home() {
+const WeatherPage: React.FC = () => {
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
-
-   // Define the onSearch handler
-   const onSearch = (city: string) => {
-    // Add your search logic here
-    console.log('Searching for city:', city);
-    // You might want to update WeatherCard with the weather data
+  const handleWeatherData = (data: WeatherData) => {
+      setWeatherData(data);
   };
 
   return (
-    <div>
-    <Header />
-    <SearchBar onSearch={onSearch} />
-    <WeatherCard />
-    <Footer />
-    </div>
+      <div >
+          <Header />
+          <SearchBar onSearch={handleWeatherData} />
+          {weatherData && <WeatherCard data={weatherData} />}
+          <Footer />
+      </div>
   );
-}
+};
+
+export default WeatherPage;
