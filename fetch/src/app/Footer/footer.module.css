@@ -1,0 +1,13 @@
+
+.footer {
+    background-color: #E5F4F4;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .footerText {
+    color: #4B5563; /* Equivalent to Tailwind's text-gray-600 */
+    font-size: 14px;
+  }
+  
