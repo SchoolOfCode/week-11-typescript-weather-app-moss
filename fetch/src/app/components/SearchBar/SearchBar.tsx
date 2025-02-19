@@ -1,16 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
-import styles from './Hero.module.css';
+import styles from './SearchBar.module.css';
 import { WeatherData } from '@/types';
 
 //Create an interface for the search bar props
 // The component should accept a single argument of type string (the city).
 //The component does not return anything (void means it has no return value).
-interface SearchBarProps {
-    onSearch: (data: WeatherData) => void;
-}
-
 // create search bar component 
 //set initial state as empty
 // take in an input value of city 
@@ -47,7 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             const URLCelsius = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=metric`;
             
             const response = await fetch(URLCelsius);
-            console.log("resposne", response)
+            console.log("response", response)
             if (!response.ok) {
                 throw new Error('City not found');
             }
