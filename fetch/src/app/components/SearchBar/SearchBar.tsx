@@ -31,7 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         setCity(e.target.value);
         console.log("city", city)
     };
-
+    console.log('API Key:', process.env.NEXT_PUBLIC_WEATHER_API_KEY);
     const handleSearch = async () => {
         if (!city.trim()) return;
         
@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         setError("");
         
         try {
-            const API_key = process.env.WEATHER_API_KEY;
+            const API_key = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
             const URLCelsius = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=metric`;
             
             const response = await fetch(URLCelsius);
